@@ -1,0 +1,20 @@
+/**
+ * Font.
+ *
+ * Adds `rem` unit based font size property, a fallback `px` unit based font size property, and a `em` unit based line height property to any rule.
+ * @param {String} $font-size - Pixel unit value.
+ * @param {String} $line-height - Pixel unit value.
+ * @example @include font-size(16px, 24px);
+ */
+/**
+ * Media.
+ *
+ * Media queries
+ * @param {String} $breakpoint - Breakpoint pixel unit value.
+ * @example @include media('phone') {}
+ */
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+body {
+  font-family: "General Sans", sans-serif;
+}/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,195 @@
+/**
+ * Font.
+ *
+ * Adds `rem` unit based font size property, a fallback `px` unit based font size property, and a `em` unit based line height property to any rule.
+ * @param {String} $font-size - Pixel unit value.
+ * @param {String} $line-height - Pixel unit value.
+ * @example @include font-size(16px, 24px);
+ */
+/**
+ * Media.
+ *
+ * Media queries
+ * @param {String} $breakpoint - Breakpoint pixel unit value.
+ * @example @include media('phone') {}
+ */
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+body {
+  font-family: "General Sans", sans-serif;
+}
+
+button,
+.button,
+.btn,
+.btn-link {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+button:after,
+.button:after,
+.btn:after,
+.btn-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, black 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+button:active:after,
+.button:active:after,
+.btn:active:after,
+.btn-link:active:after {
+  transform: scale(0, 0);
+  opacity: 0.2;
+  transition: 0s;
+}
+button.primary,
+.button.primary,
+.btn.primary,
+.btn-link.primary {
+  background-color: #00A58E;
+  color: #f5f5f5;
+}
+button.primary:hover,
+.button.primary:hover,
+.btn.primary:hover,
+.btn-link.primary:hover {
+  background-color: #00917c;
+}
+button.primary:active,
+.button.primary:active,
+.btn.primary:active,
+.btn-link.primary:active {
+  background-color: #00816f;
+}
+button.primary:disabled,
+.button.primary:disabled,
+.btn.primary:disabled,
+.btn-link.primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+button.primary-subtle,
+.button.primary-subtle,
+.btn.primary-subtle,
+.btn-link.primary-subtle {
+  background-color: #d8fffa;
+  color: #252A31;
+}
+button.primary-subtle:hover,
+.button.primary-subtle:hover,
+.btn.primary-subtle:hover,
+.btn-link.primary-subtle:hover {
+  background-color: #c4fff7;
+}
+button.primary-subtle:active,
+.button.primary-subtle:active,
+.btn.primary-subtle:active,
+.btn-link.primary-subtle:active {
+  background-color: #b4fff5;
+}
+button.primary-subtle:disabled,
+.button.primary-subtle:disabled,
+.btn.primary-subtle:disabled,
+.btn-link.primary-subtle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+button.secondary,
+.button.secondary,
+.btn.secondary,
+.btn-link.secondary {
+  background-color: #E8EDF1;
+  color: #252A31;
+}
+button.secondary:hover,
+.button.secondary:hover,
+.btn.secondary:hover,
+.btn-link.secondary:hover {
+  background-color: #dbe3e9;
+}
+button.secondary:active,
+.button.secondary:active,
+.btn.secondary:active,
+.btn-link.secondary:active {
+  background-color: #d2dce3;
+}
+button.secondary:disabled,
+.button.secondary:disabled,
+.btn.secondary:disabled,
+.btn-link.secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+button.white,
+.button.white,
+.btn.white,
+.btn-link.white {
+  background-color: var(--white);
+  color: var(--text);
+}
+button.transparent,
+.button.transparent,
+.btn.transparent,
+.btn-link.transparent {
+  background-color: transparent;
+  color: var(--text);
+}
+button.sm,
+.button.sm,
+.btn.sm,
+.btn-link.sm {
+  font-size: 12px;
+  padding: 8px 12px;
+  line-height: 16px;
+}
+button.md,
+.button.md,
+.btn.md,
+.btn-link.md {
+  font-size: 14px;
+  padding: 12px 16px;
+  line-height: 20px;
+}
+button.lg,
+.button.lg,
+.btn.lg,
+.btn-link.lg {
+  font-size: 16px;
+  padding: 14px 24px;
+  line-height: 24px;
+}
+button.fw,
+.button.fw,
+.btn.fw,
+.btn-link.fw {
+  width: 100%;
+  padding: 16px 24px !important;
+}
+button span,
+.button span,
+.btn span,
+.btn-link span {
+  padding-right: 8px;
+}
+button.icon-only span,
+.button.icon-only span,
+.btn.icon-only span,
+.btn-link.icon-only span {
+  padding-right: 0;
+}/*# sourceMappingURL=Button.css.map */

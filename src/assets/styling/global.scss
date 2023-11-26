@@ -1,0 +1,9 @@
+// importing collection of scss files
+@import 'collection/variables';
+@import 'collection/mixins';
+@import 'collection/fonts';
+@import 'collection/typography';
+
+body {
+    font-family: $primary-font;
+}

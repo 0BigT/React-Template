@@ -1,0 +1,94 @@
+/**
+ * Font.
+ *
+ * Adds `rem` unit based font size property, a fallback `px` unit based font size property, and a `em` unit based line height property to any rule.
+ * @param {String} $font-size - Pixel unit value.
+ * @param {String} $line-height - Pixel unit value.
+ * @example @include font-size(16px, 24px);
+ */
+
+@mixin font($font-size, $line-height) {
+	@if (type-of($font-size)==number and unit($font-size)=='px') {
+		font-size: (($font-size / 10px) * 1rem);
+	}
+
+	@else {
+		@error 'Value for `#{$font-size}` should be a `px` unit';
+	}
+
+	@if (type-of($line-height)==number and unit($line-height)=='px') {
+		line-height: (($line-height / $font-size) * 1em);
+	}
+
+	@else {
+		@error 'Value for `#{$line-height}` should be a `px` unit';
+	}
+}
+
+/**
+ * Media.
+ *
+ * Media queries
+ * @param {String} $breakpoint - Breakpoint pixel unit value.
+ * @example @include media('phone') {}
+ */
+
+@mixin media($size) {
+	@if ($size =='desktop') {
+		@media only screen and (min-width: 1200px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-landscape-up') {
+		@media only screen and (min-width: 900px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-landscape') {
+		@media only screen and (min-width: 900px) and (max-width: 1199px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-landscape-down') {
+		@media only screen and (max-width: 1199px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-portrait-up') {
+		@media only screen and (min-width: 600px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-portrait') {
+		@media only screen and (min-width: 600px) and (max-width: 899px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet-portrait-down') {
+		@media only screen and (max-width: 899px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='tablet') {
+		@media only screen and (min-width: 600px) and (max-width: 1199px) {
+			@content;
+		}
+	}
+
+	@else if ($size =='phone') {
+		@media only screen and (max-width: 599px) {
+			@content;
+		}
+	}
+
+	@else {
+		@content;
+	}
+}
