@@ -30,6 +30,7 @@ button,
   border: none;
   outline: none;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 button:after,
 .button:after,
@@ -43,7 +44,7 @@ button:after,
   top: 0;
   left: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, black 10%, transparent 10.01%);
+  background-image: radial-gradient(circle, black 20%, transparent 10.01%);
   background-repeat: no-repeat;
   background-position: 50%;
   transform: scale(10, 10);
