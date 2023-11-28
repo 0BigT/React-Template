@@ -1,9 +1,154 @@
 // importing collection of scss files
 @import 'collection/variables';
+@import 'collection/spacing';
 @import 'collection/mixins';
 @import 'collection/fonts';
 @import 'collection/typography';
 
 body {
     font-family: $primary-font;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+}
+
+// text
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+// flex
+.flex {
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-center,
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-justify-space-around {
+    justify-content: space-around;
+}
+
+.flex-align-start {
+    align-items: flex-start;
+}
+
+.flex-align-end {
+    align-items: flex-end;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+// flex direction
+.flex-column {
+    flex-direction: column;
+}
+
+// alignment position
+.align-right {
+    justify-content: flex-end;
+}
+
+.align-center {
+    justify-content: center;
+}
+
+// positions
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-static {
+    position: static;
+}
+
+
+// positioning top left right bottom
+.end-0 {
+    right: 0;
+}
+
+.start-0 {
+    left: 0;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+// translate
+.translate-middle {
+    transform: translate(-50%, -50%);
+}
+
+.translate-middle-x {
+    transform: translateX(-50%);
+}
+
+.translate-middle-y {
+    transform: translateY(-50%);
+}
+
+// Text colors
+.text-primary {
+    color: $primary-text;
+}
+
+.text-secondary {
+    color: $secondary-text;
+}
+
+.text-tertiary {
+    color: $tertiary-text;
+}
+
+.text-subtle {
+    color: $subtle-text;
+}
+
+.text-white {
+    color: $white-text;
 }

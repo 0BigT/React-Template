@@ -1,10 +1,15 @@
-@import '../../assets/styling/global.scss';
+@import "../../assets/styling/global.scss";
 
 // Sizing buttons
 $padding-sm: 8px 12px;
 $padding-md: 12px 16px;
 $padding-lg: 14px 24px;
 $padding-fw: 16px 24px !important;
+
+// Sizing buttons perfectly squared
+$padding-sm-sq: 8px;
+$padding-md-sq: 12px;
+$padding-lg-sq: 14px;
 
 // Font size buttons
 $font-size-sm: 12px;
@@ -17,7 +22,7 @@ $border: none;
 
 // Button colors
 $btn-text: $white-text;
-$btn-text-subtle: #007F6D;
+$btn-text-subtle: #007f6d;
 $btn-text-constrast: $ink-900;
 
 // Button states
@@ -42,10 +47,11 @@ $btn-text-constrast: $ink-900;
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+
   &:after {
     content: "";
     display: block;
-	position: absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -58,10 +64,26 @@ $btn-text-constrast: $ink-900;
     opacity: 0;
     transition: transform 0.5s, opacity 1s;
   }
+  
   &:active:after {
     transform: scale(0, 0);
     opacity: 0.2;
     transition: 0s;
+  }
+}
+
+// Perfectly squared sizing
+@mixin button-squared($padding) {
+  &.sm {
+    padding: $padding-sm-sq !important;
+  }
+
+  &.md {
+    padding: $padding-md-sq !important;
+  }
+
+  &.lg {
+    padding: $padding-lg-sq !important;
   }
 }
 
@@ -74,6 +96,7 @@ button,
   border: none;
   outline: none;
   cursor: pointer;
+  text-align: center;
   transition: background-color 0.2s ease-in-out;
 
   // Button color types
@@ -124,9 +147,14 @@ button,
     padding: $padding-lg;
     line-height: 24px;
   }
+
   &.fw {
     width: 100%;
     padding: $padding-fw;
+  }
+
+  &.fl {
+    flex: 1;
   }
 
   // Button icon
@@ -137,6 +165,53 @@ button,
   &.icon-only {
     span {
       padding-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
     }
+
+    // Perfectly squared sizing
+    @include button-squared($padding-sm);
   }
+
+  // Button shapes and styles
+  &.rounded {
+    border-radius: 50%;
+  
+    // Perfectly rounded sizing
+    @include button-squared($padding-sm);
+  }
+
+  &.outlined {
+    border: 2px solid $primary;
+    color: $primary;
+  }
+
+  &.outlined-secondary {
+    border: 2px solid $secondary;
+    color: $secondary;
+  }
+
+  &.outlined-white {
+    border: 2px solid var(--white);
+    color: var(--white);
+  }
+
+  &.outlined-transparent {
+    border: 2px solid transparent;
+  }
+
+  // Button text color
+  &.btn-text_primary {
+    color: $primary;
+  }
+
+  // Shadow
+  &.shadow {
+    box-shadow: $box-shadow;
+  }
+  
+
 }

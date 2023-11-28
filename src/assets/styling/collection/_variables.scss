@@ -1,15 +1,22 @@
 // _variables.scss
 // 
-// color pallete 100 - 900
-$ink-900: #252A31;
-$ink-800: #3C4251;
-$ink-700: #555D6E;
-$ink-600: #6E7582;
-$ink-500: #878D9A;
-$ink-400: #A0A5AE;
-$ink-300: #BAC7D5;
-$ink-200: #D3D9E0;
-$ink-100: #ECEFF1;
+// color pallete 100 - 1500
+
+$ink-900: #000000;
+$ink-800: #0F1115;
+$ink-700: #1B1E24;
+$ink-600: #252A31;
+$ink-500: #3C4251;
+$ink-400: #555D6E;
+$ink-300: #6E7582;
+$ink-200: #878D9A;
+$ink-100: #A0A5AE;
+
+// $ink-500: #878D9A;
+// $ink-400: #A0A5AE;
+// $ink-300: #BAC7D5;
+// $ink-200: #D3D9E0;
+// $ink-100: #ECEFF1;
 
 $red-100: #ffebee;
 $red-200: #ffcdd2;
@@ -208,6 +215,7 @@ $grey-900: #212121;
 
 // color pallete
 $primary: #00A58E;
+$primary-light: #00C7B3;
 $secondary: #E8EDF1;
 $tertiary: #F5F5F5;
 $accent: #e74c3c;

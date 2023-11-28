@@ -2,15 +2,15 @@
  * Button component.
  *
  * @typedef {'primary' | 'primary-subtle' | 'secondary' | 'white' | 'transparent' | 'critical' | 'critical-subtle'} ButtonType
- * @typedef {'sm' | 'md' | 'lg', 'fw', 'sm fw', 'md fw', 'lg fw'} ButtonSize
+ * @typedef {'sm' | 'md' | 'lg', 'fw', 'sm fw', 'md fw', 'lg fw', 'fl'} ButtonSize
  *
  * @param {Object} props - The component props.
  * @param {React.ReactNode} props.children - The content of the button.
  * @param {ButtonType} props.color - The color type of the button.
  * @param {ButtonSize} [props.size] - The size of the button.
  * @param {string} [props.icon] - The name of the icon to show.
- * @param {boolean} [props.iconRight] - Whether to show an icon on the right.
  * @param {boolean} [props.iconOnly] - Whether the button contains only an icon.
+ * @param {boolean} [props.iconRight] - Whether to show an icon on the right.
  * @param {string} [props.to] - The destination URL if the button is a Link.
  * @param {string} [props.className] - Additional class names for styling.
  *
@@ -28,10 +28,11 @@ export default function Button({
 	iconOnly,
 	iconRight,
 	state,
+	className,
 	...props
 }) {
 	const buttonProps = {
-		className: `${props.className || ''} ${color} ${size || ''} ${iconOnly ? 'icon-only' : ''}`,
+		className: `${className || ''} ${color} ${size || ''} ${iconOnly ? 'icon-only' : ''}`,
 		...props,
 	};
 

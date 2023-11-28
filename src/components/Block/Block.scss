@@ -1,0 +1,31 @@
+// block styling
+//
+// Path: Template/src/components/Block/Block.scss
+@import "../../assets/styling/global.scss";
+
+.block {
+  position: relative;
+  padding: 16px;
+  background: #dbfffa;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+
+.block-header {
+  position: relative;
+  padding: 0 $m-2;
+
+  button {
+    // on the right of the header
+    float: right;
+  }
+}
+
+.block-content {
+  margin: $m-3 $m-2;
+}
+
+.block-placeholder {
+  font-size: 48px;
+  opacity: 0.25;
+}

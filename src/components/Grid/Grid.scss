@@ -1,0 +1,27 @@
+@import '../../assets/styling/collection/mixins';
+
+.grid {
+	display: grid;
+}
+
+@mixin columns($n) {
+	grid-template-columns: repeat($n, minmax(0, 1fr));
+}
+
+@mixin rows($n) {
+	grid-template-rows: repeat($n, minmax(0, 1fr));
+}
+
+@for $i from 1 through 20 {
+	.columns-#{$i} {
+		@include media('tablet-portrait-down') {
+			@include columns($i / 2);
+		}
+
+		@include columns($i);
+	}
+
+	.rows-#{$i} {
+		@include rows($i);
+	}
+}

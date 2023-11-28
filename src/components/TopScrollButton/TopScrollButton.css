@@ -1,0 +1,42 @@
+.top-scroll-button {
+  position: fixed !important;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999;
+  cursor: pointer;
+}
+.top-scroll-button:hover {
+  transform: scale(1.1);
+}
+.top-scroll-button:active {
+  transform: scale(1.05);
+}
+.top-scroll-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.slide-out-to-bottom {
+  animation: slide-out-to-bottom 0.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-out-to-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(100% + 16px));
+  }
+}/*# sourceMappingURL=TopScrollButton.css.map */

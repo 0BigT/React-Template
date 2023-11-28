@@ -1,0 +1,73 @@
+// 
+// todo image loading placeholder background
+// 
+
+.card {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  button {
+    text-align: center !important;
+  }
+
+  .card-image {
+    position: relative;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    // transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      display: block;
+    }
+
+    // Scaling animation card
+    &.scaling-animation {
+      // transitions
+      transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      img {
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      button {
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      // hover animation
+      &:hover img, 
+      &:hover button {
+        transform: scale(1.3);
+      }
+  
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+
+    &.img_default-size {
+      height: 225px;
+    }
+  }
+
+  .card-title * {
+    margin: 0;
+  }
+}
+

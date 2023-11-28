@@ -1,0 +1,278 @@
+/**
+ * Font.
+ *
+ * Adds `rem` unit based font size property, a fallback `px` unit based font size property, and a `em` unit based line height property to any rule.
+ * @param {String} $font-size - Pixel unit value.
+ * @param {String} $line-height - Pixel unit value.
+ * @example @include font-size(16px, 24px);
+ */
+/**
+ * Media.
+ *
+ * Media queries
+ * @param {String} $breakpoint - Breakpoint pixel unit value.
+ * @example @include media('phone') {}
+ */
+.grid {
+  display: grid;
+}
+
+.columns-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-1 {
+    grid-template-columns: repeat(0.5, minmax(0, 1fr));
+  }
+}
+
+.rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-3 {
+    grid-template-columns: repeat(1.5, minmax(0, 1fr));
+  }
+}
+
+.rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.columns-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-5 {
+    grid-template-columns: repeat(2.5, minmax(0, 1fr));
+  }
+}
+
+.rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.columns-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.columns-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-7 {
+    grid-template-columns: repeat(3.5, minmax(0, 1fr));
+  }
+}
+
+.rows-7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+}
+
+.columns-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-8 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.rows-8 {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+
+.columns-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-9 {
+    grid-template-columns: repeat(4.5, minmax(0, 1fr));
+  }
+}
+
+.rows-9 {
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+}
+
+.columns-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-10 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.rows-10 {
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+
+.columns-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-11 {
+    grid-template-columns: repeat(5.5, minmax(0, 1fr));
+  }
+}
+
+.rows-11 {
+  grid-template-rows: repeat(11, minmax(0, 1fr));
+}
+
+.columns-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-12 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.rows-12 {
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+}
+
+.columns-13 {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-13 {
+    grid-template-columns: repeat(6.5, minmax(0, 1fr));
+  }
+}
+
+.rows-13 {
+  grid-template-rows: repeat(13, minmax(0, 1fr));
+}
+
+.columns-14 {
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-14 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.rows-14 {
+  grid-template-rows: repeat(14, minmax(0, 1fr));
+}
+
+.columns-15 {
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-15 {
+    grid-template-columns: repeat(7.5, minmax(0, 1fr));
+  }
+}
+
+.rows-15 {
+  grid-template-rows: repeat(15, minmax(0, 1fr));
+}
+
+.columns-16 {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-16 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+.rows-16 {
+  grid-template-rows: repeat(16, minmax(0, 1fr));
+}
+
+.columns-17 {
+  grid-template-columns: repeat(17, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-17 {
+    grid-template-columns: repeat(8.5, minmax(0, 1fr));
+  }
+}
+
+.rows-17 {
+  grid-template-rows: repeat(17, minmax(0, 1fr));
+}
+
+.columns-18 {
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-18 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+}
+
+.rows-18 {
+  grid-template-rows: repeat(18, minmax(0, 1fr));
+}
+
+.columns-19 {
+  grid-template-columns: repeat(19, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-19 {
+    grid-template-columns: repeat(9.5, minmax(0, 1fr));
+  }
+}
+
+.rows-19 {
+  grid-template-rows: repeat(19, minmax(0, 1fr));
+}
+
+.columns-20 {
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+}
+@media only screen and (max-width: 899px) {
+  .columns-20 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+}
+
+.rows-20 {
+  grid-template-rows: repeat(20, minmax(0, 1fr));
+}/*# sourceMappingURL=Grid.css.map */
