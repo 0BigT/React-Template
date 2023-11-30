@@ -1,0 +1,22 @@
+.tag {
+  position: relative;
+  width: 100%;
+  display: flex;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  line-height: 16px;
+  flex-direction: row;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.tag--primary {
+  color: #005f51;
+}
+.tag--primary .tag-content {
+  padding: 0.25rem 0.5rem;
+  color: #005f51;
+  background: #80d9cb;
+  border-radius: 4px;
+}/*# sourceMappingURL=Tag.css.map */

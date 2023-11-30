@@ -1,11 +1,55 @@
-// 
-// todo image loading placeholder background
-// 
+@import '../../assets/styling/collection/variables';
 
+// card type styles
+.card-type-default {
+  background: #fff !important;
+}
+
+.card-type-transparent {
+  background: transparent;
+  
+  .card-image {
+    overflow: hidden;
+  }
+}
+
+.card-type-horizonal .card-link,
+.card-type-horizonal {
+  display: flex;
+  background: #fff;
+
+  .card-image {
+    display: flex !important;
+    height: 135px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+
+    aspect-ratio: 0.76 / 1;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba($primary, 0.267));
+    //   z-index: 1;
+    // }
+  }
+}
+
+// Card component
 .card {
   position: relative;
-  background: #fff;
   overflow: hidden;
+
+  .card-header {
+    position: relative;
+    width: 100%;
+  }
 
   .card-overlay {
     position: absolute;
@@ -14,6 +58,11 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+
+    // gradient on overlay header
+    .card-header { 
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.467));
+    }
   }
 
   button {
@@ -26,8 +75,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    // transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-
 
     img {
       width: 100%;
@@ -37,33 +84,33 @@
       display: block;
     }
 
-    // Scaling animation card
-    &.scaling-animation {
-      // transitions
-      transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-      img {
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
-
-      button {
-        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-      }
-
-      // hover animation
-      &:hover img, 
-      &:hover button {
-        transform: scale(1.3);
-      }
-  
-      &:hover {
-        transform: scale(0.9);
-      }
-    }
+    
 
     &.img_default-size {
-      height: 225px;
+      height: 245px;
     }
+
+    &.img_rectangle_big {
+      height: 400px;
+
+      img {
+        object-position: center 25%;
+      }
+    }
+
+    &.img_square {
+      aspect-ratio: 1 / 1;
+
+      img {
+        object-position: center;
+      }
+    }
+  }
+
+  .card-link {
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
   }
 
   .card-title * {
@@ -71,3 +118,79 @@
   }
 }
 
+// Object position
+.object-position-center img {
+  object-position: center !important;
+}
+
+.object-position-center-top img {
+  object-position: center top !important;
+}
+
+.object-position-center-bottom img {
+  object-position: center bottom !important;
+}
+
+.object-position-left img {
+  object-position: left !important;
+}
+
+.object-position-right img {
+  object-position: right !important;
+}
+
+.object-position-left-top img {
+  object-position: left top !important;
+}
+
+.object-position-right-top img {
+  object-position: right top !important;
+}
+
+.object-position-left-bottom img {
+  object-position: left bottom !important;
+}
+
+.object-position-right-bottom img {
+  object-position: right bottom !important;
+}
+
+.object-position-top img {
+  object-position: top !important;
+}
+
+.object-position-bottom img {
+  object-position: bottom !important;
+}
+
+.card-paragraph {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $tertiary-text;
+}
+
+// Scaling animation card either on hover whole card or just the image
+.scaling-animation {
+
+  // transitions
+  &.card-image,
+  .card-image {
+    transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  img {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  // hover animation
+  &:hover img {
+    transform: scale(1.3);
+  }
+
+  &.card-image:hover,
+  &:hover .card-image {
+    transform: scale(0.9);
+  }
+}

@@ -213,9 +213,21 @@ $grey-700: #616161;
 $grey-800: #424242;
 $grey-900: #212121;
 
+// primary 100 - 900
+$primary-100: #e6f7f5;
+$primary-200: #b3e8e0;
+$primary-300: #80d9cb;
+$primary-400: #4dcab6;
+$primary-500: #00bba1;
+$primary-600: #00a58e;
+$primary-700: #008f7a;
+$primary-800: #007965;
+$primary-900: #005f51;
+
 // color pallete
-$primary: #00A58E;
-$primary-light: #00C7B3;
+$primary: $primary-600;
+$primary-light: $primary-400;
+$primary-subtle: $primary-100;
 $secondary: #E8EDF1;
 $tertiary: #F5F5F5;
 $accent: #e74c3c;
@@ -223,10 +235,18 @@ $background: #f5f5f5;
 
 // text
 $primary-text: $ink-900;
-$secondary-text: $ink-800;
-$tertiary-text: $ink-700;
+$secondary-text: $ink-700;
+$tertiary-text: $ink-400;
 $subtle-text: $ink-300;
 $white-text: $grey-100;
+
+// colored text
+$color-primary-text: $primary;
+$color-primary-light-text: $primary-light;
+$color-secondary-text: $secondary;
+$color-tertiary-text: $tertiary;
+
+
 
 // Spacing
 $spacing-unit: 8;
@@ -238,7 +258,8 @@ $border-radius: 4px;
 
 // Shadows
 $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-card: 4px 4px 0px rgba(30, 30, 30, 0.1);
 
 // Layout
-$container-max-width: 1200px;
+$container-max-width: 1400px;
 $section-padding: $padding-unit * 3;

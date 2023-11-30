@@ -10,6 +10,11 @@ $font-size-8: 2rem;
 $font-size-9: 2.25rem;
 $font-size-10: 2.625rem;
 
+// Typography font-weights variables
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
 // apply to the elements
 h1 {
   font-size: $font-size-10;
@@ -44,5 +49,18 @@ a {
 }
 
 body {
-    font-size: $font-size-3;
+  font-size: $font-size-3;
+}
+
+// apply to the elements
+.text-light {
+  font-weight: $font-weight-light;
+}
+
+.text-normal {
+  font-weight: $font-weight-normal;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
 }
