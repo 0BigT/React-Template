@@ -13,9 +13,10 @@ import './Grid.scss';
  * @param {string} [customRowTemplate=''] [optional] Set a custom `grid-template-rows`.
  * @param {string} [className=''] [optional] Extra class names applied to the div if needed.
  * @param {JSX.Element} children
+ * @param {string} [overflow=''] [optional] Set the overflow of the grid. default = unset.
  * @return {JSX.Element}
  */
-export default function Grid({columns, rows, id, gap, customColTemplate, customRowTemplate, className, children}) {
+export default function Grid({ title, columns, rows, id, gap, customColTemplate, customRowTemplate, className, children, overflow }) {
     // format gap value if set
     if (gap && ['string', 'number'].includes(typeof gap)) {
         let formattedGap = '';
@@ -62,13 +63,17 @@ export default function Grid({columns, rows, id, gap, customColTemplate, customR
 
 
     return (
-        <div {...{
-            key: id,
-            id: id,
-            className: `grid ${columns ? `columns-${columns}` : ''} ${rows ? `rows-${rows}` : ''} ${className ? className : ''}`,
-            style: {gap, gridTemplateColumns: customColTemplate, gridTemplateRows: customRowTemplate},
-        }}>
-            {children}
-        </div>
+        <>
+            {title && <h6 className='py-3 text-normal'>{title}</h6>}
+            
+            <div {...{
+                key: id,
+                id: id,
+                className: `grid ${columns ? `columns-${columns}` : ''} ${rows ? `rows-${rows}` : ''} ${className ? className : ''}`,
+                style: { gap, gridTemplateColumns: customColTemplate, gridTemplateRows: customRowTemplate, overflow }
+            }}>
+                {children}
+            </div>
+        </>
     );
 }
