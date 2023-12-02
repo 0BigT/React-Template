@@ -115,11 +115,9 @@ export function Title({
     ...props
 }) {
     return (
-        <div className={`card-title ${className || ''}`} {...props}>
-            <h6>
-                {children}
-            </h6>
-        </div>
+        <h6 className={`card-title ${className || ''}`} {...props}>
+            {children}
+        </h6>
     )
 }
 
@@ -158,10 +156,7 @@ export function Image({
     ...props
 }) {
     return (
-        <div className={`card-image ${className || ''} 
-            ${objectPosition ? `object-position-${objectPosition}` : ''}`}
-            style={{ borderRadius: radius }} {...props}
-        >
+        <div className={`card-image ${className || ''} ${objectPosition ? `object-position-${objectPosition}` : ''}`} style={{ borderRadius: radius }} {...props}>
             {children}
         </div>
     )

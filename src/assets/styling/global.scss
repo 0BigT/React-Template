@@ -5,6 +5,13 @@
 @import 'collection/fonts';
 @import 'collection/typography';
 
+// node packages styles
+@import 'react-toastify/dist/ReactToastify.css';
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: $primary-font;
     margin: 0;
@@ -37,11 +44,13 @@ h1, h2, h3, h4, h5, h6, p {
     flex-direction: row;
 }
 
-.flex-start {
+.flex-start,
+.flex-justify-start {
     justify-content: flex-start;
 }
 
-.flex-end {
+.flex-end,
+.flex-justify-end {
     justify-content: flex-end;
 }
 
@@ -124,6 +133,10 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
 }
 
+.h-100 {
+    height: 100%;
+}
+
 // translate
 .translate-middle {
     transform: translate(-50%, -50%);
@@ -180,6 +193,11 @@ h1, h2, h3, h4, h5, h6, p {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.353);
 }
 
+// Text ellipsis
+.ellipsis {
+    text-overflow: ellipsis;
+}
+
 // Backdrop gradient overlay
 .backdrop-gradient-overlay::before {
     content: '';
@@ -190,4 +208,97 @@ h1, h2, h3, h4, h5, h6, p {
     height: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
     z-index: -1;
+}
+
+.linear-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba($primary, .5));
+    z-index: 1;
+}
+
+// Toastify
+.Toastify__close-button {
+    display: none;
+}
+
+.Toastify__toast-body {
+    padding: $p-2 $p-1;
+}
+
+// Animations
+// Slide out to bottom
+@keyframes slide-out-to-bottom {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(calc(100% + 16px));
+    }
+}
+
+.animate__SlideOutDown {
+    animation: slide-out-to-bottom 0.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+// Fade out up
+@keyframes fade-out-up {
+    0% {
+      opacity: 1;
+      scale: 1;
+      transform: translateY(0);
+    }
+  
+    100% {
+      opacity: 0;
+      scale: 0.8;
+      transform: translateY(-50%);
+    }
+}
+
+.animate__fadeOutUp {
+    animation: fade-out-up .8s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+// Fade in up
+@keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      scale: 0.8;
+      transform: translateY(-50%);
+    }
+  
+    100% {
+      opacity: 1;
+      scale: 1;
+      transform: translateY(0);
+    }
+}
+
+.animate__fadeInUp {
+    animation: fade-in-up .8s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+// Fade in down
+@keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      scale: 0.8;
+      transform: translateY(50%);
+    }
+  
+    100% {
+      opacity: 1;
+      scale: 1;
+      transform: translateY(0);
+    }
+}
+
+.animate__fadeInDown {
+    animation: fade-in-down .8s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
 }

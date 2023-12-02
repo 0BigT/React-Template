@@ -1,5 +1,4 @@
 import '../assets/styling/global.scss';
-
 import Button from '../components/Button/Button';
 import Grid from '../components/Grid/Grid';
 import Block from '../components/Block/Block';
@@ -9,6 +8,8 @@ import TopScrollButton from '../components/TopScrollButton/TopScrollButton';
 import Card, { Header, Body, Footer, Title, Subtitle, Text, Image, Actions, Overlay, Paragraph } from '../components/Card/Card';
 import { SearchOutlined, StarFilled, StarOutlined, PushpinOutlined } from '@ant-design/icons';
 
+// Jellyfin integration
+import JellyfinDetails from '../services/Jellyfin/JellyfinApi';
 
 const Home = () => {
     return (
@@ -236,7 +237,7 @@ const Home = () => {
                     </Card>
 
                     <Card type={'horizonal'}  radius={'3px'} link='/' className={'shadow-hover'}>
-                        <Image radius={'3px'} objectPosition={'bottom'}>
+                        <Image radius={'3px'}>
                             <img
                                 src="https://www.themoviedb.org/t/p/original/bXd71QmEraF6hzt8RtmIYZf8IQj.jpg"
                                 alt="test image"
@@ -430,8 +431,17 @@ const Home = () => {
             </Block>
 
             <Block title='Empty' collapsed={true} className={'mb-5'}>
-
+            
             </Block>
+
+            <Block title='Jellyfin' collapsed={false} className={'mb-5'}>
+                <JellyfinDetails />
+                
+                <p className='pb-2'>Example of a Jellyfin widget</p>
+                <img src="assets/images/Jellyfin_Widget.png" alt="Jellyfin Widget Example" />
+            </Block>
+
+
         </div>
     );
 }
