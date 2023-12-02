@@ -2,7 +2,7 @@ import {createBrowserRouter, createRoutesFromElements, Outlet, Route} from 'reac
 // import NotFound from 'UI/App/Partials/App/NotFound';
 // import RoutingErrorHandler from 'UI/App/Partials/App/RoutingErrorHandler';
 import './assets/styling/global.css';
-import Home from 'Pages/Home';
+import Home from 'pages/Home';
 
 
 export default createBrowserRouter(
