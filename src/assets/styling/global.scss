@@ -24,6 +24,11 @@ body {
     padding: 0 $p-2 $p-4;
 }
 
+// text
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
 .container-header {
     margin: $m-4 0;
 }
@@ -166,6 +171,7 @@ body {
 .vh-100 {
     height: 100vh;
 }
+
 // translate
 .translate-middle {
     transform: translate(-50%, -50%);

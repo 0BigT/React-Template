@@ -14,7 +14,6 @@ import JellyfinDetails from '../services/Jellyfin/JellyfinApi';
 
 const Home = () => {
     return (
-        <div className='container mt-5'>
         <div className='container'>
             <div className='container-header flex flex-align-center gap-2'>
                 <img src="assets/logo.png" alt="logo" className='logo' />
@@ -22,7 +21,6 @@ const Home = () => {
                     Components
                 </h2>
             </div>
-            
 
             <TopScrollButton />
 
