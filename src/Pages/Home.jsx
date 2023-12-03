@@ -1,4 +1,5 @@
 import '../assets/styling/global.scss';
+
 import Button from '../components/Button/Button';
 import Grid from '../components/Grid/Grid';
 import Block from '../components/Block/Block';
@@ -14,7 +15,14 @@ import JellyfinDetails from '../services/Jellyfin/JellyfinApi';
 const Home = () => {
     return (
         <div className='container mt-5'>
-            <h2>Components</h2>
+        <div className='container'>
+            <div className='container-header flex flex-align-center gap-2'>
+                <img src="assets/logo.png" alt="logo" className='logo' />
+                <h2 className='text-color-primary'>
+                    Components
+                </h2>
+            </div>
+            
 
             <TopScrollButton />
 
@@ -69,8 +77,8 @@ const Home = () => {
 
             <Block title='Cards' collapsed={false} className={'mb-5'}>
                 {/* Default cards */}
-                <Grid title={'Default'} columns={3} gap={24} className={'mb-4'}>
-                    <Card radius={'3px'} >
+                <Grid title={'Default'} customColTemplate={'repeat(auto-fit, minmax(300px, 1fr))'} gap={24} className={'mb-4'}>
+                    <Card >
                         <Image className={'img_default-size'}>
                             <Overlay>
                                 <Button
@@ -112,7 +120,7 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card radius={'3px'} >
+                    <Card >
                         <Image className={'img_default-size'}>
                             <Overlay>
                                 <Button
@@ -154,7 +162,7 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card radius={'3px'} >
+                    <Card >
                         <Image className={'img_default-size'}>
                             <Overlay>
                                 <Button
@@ -199,8 +207,8 @@ const Home = () => {
 
 
                 {/* Horizontal Rectangle cards */}
-                <Grid title={'Horizontal'} columns={3} gap={24} className={'mb-4'} >
-                    <Card type={'horizonal'}  radius={'3px'} link='/' className={'shadow-hover'}>
+                <Grid title={'Horizontal'} customColTemplate={'repeat(auto-fit, minmax(350px, 1fr))'} gap={24} className={'mb-4'}>
+                    <Card type={'horizontal'}  radius={'3px'} link='/' className={'shadow-hover'}>
                         <Image radius={'3px'}>
                             <img
                                 src="https://www.themoviedb.org/t/p/original/xJnbMTrJ2fl1AXAKx34U4BPvOhs.jpg"
@@ -218,7 +226,7 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card type={'horizonal'}  radius={'3px'} link='/' className={'shadow-hover'}>
+                    <Card type={'horizontal'}  radius={'3px'} link='/' className={'shadow-hover'}>
                         <Image radius={'3px'}>
                             <img
                                 src="https://alternativemovieposters.com/wp-content/uploads/2021/02/MelvinMago_BreakingBad.jpg"
@@ -236,7 +244,7 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card type={'horizonal'}  radius={'3px'} link='/' className={'shadow-hover'}>
+                    <Card type={'horizontal'}  radius={'3px'} link='/' className={'shadow-hover'}>
                         <Image radius={'3px'}>
                             <img
                                 src="https://www.themoviedb.org/t/p/original/bXd71QmEraF6hzt8RtmIYZf8IQj.jpg"
@@ -256,8 +264,9 @@ const Home = () => {
                 </Grid>
 
                 {/* Vertical Rectangle cards */}
-                <Grid title={'Vertical'} columns={3} gap={24} className={'mb-4'}>
-                    <Card radius={'3px'} link='/' scalingAnimation={true}>
+                {/* <Grid title={'Vertical'} columns={3} gap={24} className={'mb-4'} overflow={'scroll'}> */}
+                <Grid title={'Vertical'} columns={3} overflow={3} gap={24} className={'mb-4'}>    
+                    <Card link='/' scalingAnimation={true}>
                         <Image className={'img_rectangle_big'} objectPosition={'bottom'}>
                             <img
                                 src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -281,7 +290,7 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card radius={'3px'} link='/' scalingAnimation={true}>
+                    <Card link='/' scalingAnimation={true}>
                         <Image className={'img_rectangle_big'}>
                             <img
                                 src="https://images.pexels.com/photos/1785671/pexels-photo-1785671.jpeg"
@@ -305,7 +314,79 @@ const Home = () => {
                         </Body>
                     </Card>
 
-                    <Card radius={'3px'} link='/' scalingAnimation={true}>
+                    <Card link='/' scalingAnimation={true}>
+                        <Image className={'img_rectangle_big'}>
+                            <img
+                                src="https://images.pexels.com/photos/4152974/pexels-photo-4152974.jpeg"
+                                alt="test image"
+                            />
+                        </Image>
+                        <Body className={'p-3'}>
+                            <Header className={'flex flex-space-between flex-align-center'}>
+                                <Title>
+                                    Card Title
+                                </Title>
+
+                                <Actions>
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarOutlined />
+                                </Actions>
+                            </Header>
+                        </Body>
+                    </Card>
+
+                    <Card link='/' scalingAnimation={true}>
+                        <Image className={'img_rectangle_big'} objectPosition={'bottom'}>
+                            <img
+                                src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="test image"
+                            />
+                        </Image>
+                        <Body className={'p-3'}>
+                            <Header className={'flex flex-space-between flex-align-center'}>
+                                <Title>
+                                    Card Title
+                                </Title>
+
+                                <Actions>
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarOutlined />
+                                    <StarOutlined />
+                                </Actions>
+                            </Header>
+                        </Body>
+                    </Card>
+
+                    <Card link='/' scalingAnimation={true}>
+                        <Image className={'img_rectangle_big'}>
+                            <img
+                                src="https://images.pexels.com/photos/1785671/pexels-photo-1785671.jpeg"
+                                alt="test image"
+                            />
+                        </Image>
+                        <Body className={'p-3'}>
+                            <Header className={'flex flex-space-between flex-align-center'}>
+                                <Title>
+                                    Card Title
+                                </Title>
+
+                                <Actions>
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                    <StarFilled />
+                                </Actions>
+                            </Header>
+                        </Body>
+                    </Card>
+
+                    <Card link='/' scalingAnimation={true}>
                         <Image className={'img_rectangle_big'}>
                             <img
                                 src="https://images.pexels.com/photos/4152974/pexels-photo-4152974.jpeg"
@@ -331,7 +412,7 @@ const Home = () => {
                 </Grid>
 
                 {/* Square cards */}
-                <Grid title={'Squared'} columns={4} gap={24} className={'mb-4'}>
+                <Grid title={'Squared'} customColTemplate={'repeat(auto-fit, minmax(300px, 1fr))'} gap={24} className={'mb-4'}>
                     <Card type='image' radius={'3px'} link='/'>
                         <Image className={'img_square scaling-animation'}>
                             <Overlay className={'flex flex-align-end text-white text-shadow'}>
@@ -431,7 +512,7 @@ const Home = () => {
             </Block>
 
             <Block title='Empty' collapsed={true} className={'mb-5'}>
-            
+
             </Block>
 
             <Block title='Jellyfin' collapsed={false} className={'mb-5'}>
@@ -440,8 +521,6 @@ const Home = () => {
                 <p className='pb-2'>Example of a Jellyfin widget</p>
                 <img src="assets/images/Jellyfin_Widget.png" alt="Jellyfin Widget Example" />
             </Block>
-
-
         </div>
     );
 }

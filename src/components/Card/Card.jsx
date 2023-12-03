@@ -1,11 +1,21 @@
-// Card component
-// Path: Template/src/components/Card/Card.jsx
 import './Card.scss';
 
+// Card component
+//
+// @param {Object} props - The component props.
+// @param {ReactNode} props children - The content of the card.
+// @param {string} [props className] - Additional class names for styling.
+// @param {number} [props radius] - The border radius of the card.
+// @param {string} [props type] - The type of the card.
+// @param {string} [props link] - The link to redirect to when the card is clicked.
+// @param {boolean} [props scalingAnimation] - Whether to show a scaling animation when the card is hovered.
+//
+// @returns {ReactNode} The rendered card.
+//
 export default function Card({
     children,
     className,
-    radius = 0,
+    radius = '3px',
     type = 'default',
     link,
     scalingAnimation = false,
@@ -115,9 +125,11 @@ export function Title({
     ...props
 }) {
     return (
-        <h6 className={`card-title ${className || ''}`} {...props}>
-            {children}
-        </h6>
+        <div className={`card-title ${className || ''}`} {...props}>
+            <h6>
+                {children}
+            </h6>
+        </div>
     )
 }
 
@@ -156,7 +168,10 @@ export function Image({
     ...props
 }) {
     return (
-        <div className={`card-image ${className || ''} ${objectPosition ? `object-position-${objectPosition}` : ''}`} style={{ borderRadius: radius }} {...props}>
+        <div className={`card-image ${className || ''} 
+            ${objectPosition ? `object-position-${objectPosition}` : ''}`}
+            style={{ borderRadius: radius }} {...props}
+        >
             {children}
         </div>
     )

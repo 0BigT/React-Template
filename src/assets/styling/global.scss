@@ -21,12 +21,30 @@ body {
     position: relative;
     max-width: $container-max-width;
     margin: 0 auto;
-    padding: 0 16px 32px;
+    padding: 0 $p-2 $p-4;
 }
 
-// text
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
+.container-header {
+    margin: $m-4 0;
+}
+
+@include media('phone') {
+    .container {
+        padding: 0 !important;
+    }
+
+    .container-header {
+        padding: 0 $p-4 !important;
+    }
+
+    .block {
+        padding: $p-2 $p-1 !important;
+    }
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
 }
 
 // flex
@@ -34,6 +52,10 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     flex: auto;
     flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex: 1;
 }
 
 .flex-column {
@@ -133,10 +155,17 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
 }
 
+.vw-100 {
+    width: 100vw;
+}
+
 .h-100 {
     height: 100%;
 }
 
+.vh-100 {
+    height: 100vh;
+}
 // translate
 .translate-middle {
     transform: translate(-50%, -50%);
@@ -208,17 +237,6 @@ h1, h2, h3, h4, h5, h6, p {
     height: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
     z-index: -1;
-}
-
-.linear-gradient::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba($primary, .5));
-    z-index: 1;
 }
 
 // Toastify

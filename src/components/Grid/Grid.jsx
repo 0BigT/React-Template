@@ -1,3 +1,4 @@
+import React, { Children } from 'react';
 import './Grid.scss';
 
 /**
@@ -17,15 +18,15 @@ import './Grid.scss';
  * @return {JSX.Element}
  */
 export default function Grid({ title, columns, rows, id, gap, customColTemplate, customRowTemplate, className, children, overflow }) {
-    // format gap value if set
+    // Format gap value if set
     if (gap && ['string', 'number'].includes(typeof gap)) {
         let formattedGap = '';
         for (const gapSingle of `${gap}`.split(/\s/, 2)) {
-            // add px to gapSingle if it's a number
+            // Add px to gapSingle if it's a number
             if (/\d$/.test(gapSingle)) {
                 formattedGap += `${gapSingle}px `;
             }
-            // change gapSingle to variable if it starts with "--"
+            // Change gapSingle to variable if it starts with "--"
             else if (/^--/.test(gapSingle)) {
                 formattedGap += `var(${gapSingle}) `;
             } else {
@@ -38,39 +39,39 @@ export default function Grid({ title, columns, rows, id, gap, customColTemplate,
         gap = undefined;
     }
 
-    // format customColTemplate into `minmax(0, n) minmax(0, n)` if set
-    if (customColTemplate && ['string', 'number'].includes(typeof customColTemplate)) {
-        let formattedCustomColTemplate = '';
-        for (const value of `${customColTemplate}`.split(/\s/)) {
-            let formattedValue = '';
-            // add px to value if it's a number
-            if (/\d$/.test(value)) {
-                formattedValue = `${value}px `;
-            }
-            // change value to variable if it starts with "--"
-            else if (/^--/.test(value)) {
-                formattedValue = `var(${value}) `;
-            } else {
-                formattedValue = `${value} `;
-            }
-            formattedCustomColTemplate += `minmax(0, ${formattedValue}) `;
-        }
-        customColTemplate = formattedCustomColTemplate;
-    }
-    else {
-        customColTemplate = undefined;
+    // customColTemplate
+    if (customColTemplate) {
+        customColTemplate = customColTemplate.replace(/(\d+)(fr)/g, '$1fr');
     }
 
+    // If overflow is set make the grid scrollable
+    if (overflow) {
+        return (
+            <>
+                {title && <h6 className='py-3 text-normal'>{title}</h6>}
+
+                <div {...{
+                    key: id,
+                    id: id,
+                    className: `grid-flex-container grid-overflow ${className ? className : ''}`,
+                    style: { gap, '--columns': overflow, '--gap': gap }
+                }}>
+                    {children}
+                </div>
+            </>
+        );
+    }
 
     return (
         <>
             {title && <h6 className='py-3 text-normal'>{title}</h6>}
-            
+
             <div {...{
                 key: id,
                 id: id,
                 className: `grid ${columns ? `columns-${columns}` : ''} ${rows ? `rows-${rows}` : ''} ${className ? className : ''}`,
-                style: { gap, gridTemplateColumns: customColTemplate, gridTemplateRows: customRowTemplate, overflow }
+                style: { gap, gridTemplateColumns: customColTemplate, gridTemplateRows: customRowTemplate }
+
             }}>
                 {children}
             </div>
