@@ -1,7 +1,29 @@
-@import '../../assets/styling/collection/mixins';
+@import '../../assets/styling/global';
 
 .grid {
 	display: grid;
+}
+
+.grid-flex-container {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+$defaultColumns: 3;
+$defaultGap: 16px;
+
+@mixin card-width {
+	flex: 0 0 calc(100% / var(--columns, #{$defaultColumns}) - var(--gap, #{$defaultGap}));
+}
+
+.grid-overflow {
+	overflow-y: auto;
+
+	.card {
+		min-width: 350px;
+		margin-bottom: $m-2;
+		@include card-width;
+	}
 }
 
 @mixin columns($n) {
@@ -15,7 +37,19 @@
 @for $i from 1 through 20 {
 	.columns-#{$i} {
 		@include media('tablet-portrait-down') {
-			@include columns($i / 2);
+			// if $i is even, divide by 2
+			@if $i % 2 == 0 {
+				@include columns($i / 2);
+			}
+			// if $i is odd, divide by 2 and add 0.5
+			@else {
+				@include columns($i / 2 + 0.5);
+			}
+		}
+
+		// phone
+		@include media('phone') {
+			@include columns(1);
 		}
 
 		@include columns($i);
@@ -23,5 +57,5 @@
 
 	.rows-#{$i} {
 		@include rows($i);
-	}
+	}	
 }

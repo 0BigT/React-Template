@@ -121,7 +121,8 @@ button,
 
   &.white {
     background-color: $white;
-    color: var(--text);
+    color: $btn-text;
+    @include button-style($white);
   }
 
   &.transparent {
